@@ -21,7 +21,7 @@ pipeline {
                     def curImage = docker.build("${registry}")
                     curImage.push()
                 }
-                slackSend(color:'good', channel:'chef-deploys', message:"${build_name} image built")
+
             }
         }
         stage('release') {
