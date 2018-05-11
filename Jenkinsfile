@@ -35,11 +35,22 @@ pipeline {
         stage('release') {
 
             steps {
+            script {
+
+                kubectl create namespace '${K8S_NAMESPACE}'
+
+                }
 
             }
         }
     }
     post {
-        
+        success {
+            slackSend(color:'good', channel:'teeeeststs', message:"${build_name} test succeeded")
+                }
+        failure {
+            colorMake 'clean'
+            slackSend(color:'bad', channel:'teeeeststs', message:"${build_name} failed: [<${changesUrl}|Changes>] [<${consoleUrl}|Console>]")
+        }
     }
 }
