@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "kubectl create namespace '${K8S_NAMESPACE}'"
+                    sh "kubectl set image deployment/canplugdata-service-test canplugdata-service-test=${registry}"
 
                 }
 
