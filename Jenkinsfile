@@ -5,7 +5,7 @@ pipeline {
         stage('setup') {
             steps {
                 script {
-                    build_name  = "${JOB_NAME}-${BRANCH_NAME}-${BUILD_NUMBER}"
+                    build_name  = "${BUILD_NUMBER}"
                     registry    = "sergbr/testjenkins"
                     K8S_NAMESPACE = 'canplugdata-service-ns'
                 }
