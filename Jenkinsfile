@@ -13,8 +13,6 @@ pipeline {
             }
         }
         stage('build') {
-
-            when { branch 'master' }
             steps {
                 script {
                     sh  """
