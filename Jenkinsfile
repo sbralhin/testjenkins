@@ -35,9 +35,9 @@ pipeline {
         stage('release') {
 
             steps {
-            script {
+                script {
 
-                kubectl create namespace '${K8S_NAMESPACE}'
+                    sh "kubectl create namespace '${K8S_NAMESPACE}'"
 
                 }
 
