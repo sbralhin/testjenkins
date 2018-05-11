@@ -1,13 +1,11 @@
 pipeline {
-    
-    agent none
+
+    agent any
     stages {
         stage('setup') {
             steps {
                 script {
                     build_name  = "${JOB_NAME}-${BRANCH_NAME}-${BUILD_NUMBER}"
-                    changesUrl  = "${env.RUN_CHANGES_DISPLAY_URL}"
-                    consoleUrl  = "${env.BUILD_URL}/console"
                     registry    = "sergbr/testjenkins"
                     K8S_NAMESPACE = 'canplugdata-service-ns'
                 }
@@ -40,13 +38,5 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            slackSend(color:'good', channel:'teeeeststs', message:"${build_name} test succeeded")
-                }
-        failure {
-            colorMake 'clean'
-            slackSend(color:'bad', channel:'teeeeststs', message:"${build_name} failed: [<${changesUrl}|Changes>] [<${consoleUrl}|Console>]")
-        }
-    }
+
 }
