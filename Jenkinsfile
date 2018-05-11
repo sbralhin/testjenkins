@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     build_name  = "${BUILD_NUMBER}"
-                    registry    = "sergbr/testjenkins"
+                    registry    = "sergbr/canplugdata-service-test"
                     K8S_NAMESPACE = 'canplugdata-service-ns'
                 }
 
@@ -29,7 +29,8 @@ pipeline {
             steps {
                 script {
 
-                    sh "kubectl set image deployment/canplugdata-service-test canplugdata-service-test=${registry}"
+                    sh "kubectl create deployment canplugdata-service-test --image sergbr/canplugdata-service-test --namespace=canplugdata-service-ns"
+
 
                 }
 
