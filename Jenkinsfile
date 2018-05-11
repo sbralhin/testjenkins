@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "kubectl set image deployment/canplugdata-service-test canplugdata-service-test=${registry}"
+                    sh "kubectl set image deployment/canplugdata-service-test canplugdata-service-test=${registry} --namespace=canplugdata-service-ns"
 
 
                 }
