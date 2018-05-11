@@ -1,9 +1,5 @@
-def colorMake(String recipe) {
-    ansiColor('xterm') { sh "make ${recipe}" }
-}
-
 pipeline {
-    options { disableConcurrentBuilds() }
+    
     agent none
     stages {
         stage('setup') {
