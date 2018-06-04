@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     sh  """
-                        docker login -u sergbr -p dblbvjcnm07
+                        docker login -u sergbr -p dblbvjcnm07!
                         """
                     def curImage = docker.build("${registry}")
                     curImage.push()
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "echo run build"
+                    sh "echo Test PR reqest second"
 
 
                 }
