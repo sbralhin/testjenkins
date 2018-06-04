@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "echo run build"
+                    sh "echo Test PR reqest second"
 
 
                 }
