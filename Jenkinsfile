@@ -13,6 +13,7 @@ pipeline {
             }
         }
         stage('build') {
+            when { branch 'develop' }
             steps {
                 script {
                     sh  """
@@ -25,7 +26,7 @@ pipeline {
             }
         }
         stage('release') {
-
+            when { branch 'develop' }
             steps {
                 script {
 
