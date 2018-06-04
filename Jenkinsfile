@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "echo Test PR reqest second"
+                    sh "echo Test PR reqest correct"
 
 
                 }
