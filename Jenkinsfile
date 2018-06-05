@@ -13,6 +13,7 @@ pipeline {
             }
         }
         stage('build') {
+            when { branch 'develop' }
             steps {
                 script {
                     sh  """
@@ -25,11 +26,11 @@ pipeline {
             }
         }
         stage('release') {
-
+            when { branch 'develop' }
             steps {
                 script {
 
-                    sh "echo run build"
+                    sh "echo Test PR reqest change 3"
 
 
                 }
