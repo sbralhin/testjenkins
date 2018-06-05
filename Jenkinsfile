@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "echo Test PR reqest correct new ggg branch"
+                    sh "echo Test PR reqest"
 
 
                 }
